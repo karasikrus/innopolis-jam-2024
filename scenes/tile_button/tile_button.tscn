@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj3vggnrfkw37"]
+
+[ext_resource type="Script" path="res://scenes/tile_button/tile_button.gd" id="1_u8qcb"]
+[ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="2_gn6x6"]
+
+[node name="TileButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -304.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u8qcb")
+tile_to_spawn = ExtResource("2_gn6x6")
+
+[connection signal="button_down" from="." to="." method="spawn_draggable_tile"]

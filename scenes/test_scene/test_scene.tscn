@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://4ru6vnvln4o6"]
+
+[ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
+[ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
+[ext_resource type="PackedScene" uid="uid://bj3vggnrfkw37" path="res://scenes/tile_button/tile_button.tscn" id="3_ds1ks"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xmfsl")]
+position = Vector2(135, 93)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -6)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="EmptySpaces" type="Node2D" parent="."]
+
+[node name="EmptySpace" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 32)
+
+[node name="EmptySpace2" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, 32)
+
+[node name="EmptySpace3" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 32)
+
+[node name="EmptySpace4" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(160, 32)
+
+[node name="EmptySpace5" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 96)
+
+[node name="EmptySpace6" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 160)
+
+[node name="EmptySpace7" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 224)
+
+[node name="EmptySpace8" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 288)
+
+[node name="EmptySpace9" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 32)
+
+[node name="EmptySpace14" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, -32)
+
+[node name="EmptySpace15" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, -32)
+
+[node name="EmptySpace16" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, -32)
+
+[node name="EmptySpace17" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(160, -32)
+
+[node name="EmptySpace18" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, -32)
+
+[node name="EmptySpace10" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 96)
+
+[node name="EmptySpace11" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 160)
+
+[node name="EmptySpace12" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 224)
+
+[node name="EmptySpace13" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 288)
+
+[node name="EmptySpace19" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 96)
+
+[node name="EmptySpace20" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 160)
+
+[node name="EmptySpace21" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 224)
+
+[node name="EmptySpace22" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 288)
+
+[node name="EmptySpace23" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 96)
+
+[node name="EmptySpace24" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 160)
+
+[node name="EmptySpace25" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 224)
+
+[node name="EmptySpace26" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 288)
+
+[node name="SpawnedTiles" type="Node2D" parent="." groups=["spawned_tiles"]]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Hud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileButton" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 62.0
+offset_right = -128.0
+offset_bottom = 70.0
