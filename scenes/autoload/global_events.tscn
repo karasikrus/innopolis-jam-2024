@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://db0cdoe3chbt8"]
+
+[ext_resource type="Script" path="res://scenes/autoload/global_events.gd" id="1_dl6nf"]
+
+[node name="GlobalEvents" type="Node"]
+script = ExtResource("1_dl6nf")

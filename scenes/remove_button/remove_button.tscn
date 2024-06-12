@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://gellyt8g0j1f"]
+
+[ext_resource type="Script" path="res://scenes/remove_button/remove_button.gd" id="1_qodg5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnmfu"]
+bg_color = Color(1, 0.342467, 0.283971, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usp5n"]
+bg_color = Color(0.999999, 0.25895, 0.210417, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d33yp"]
+bg_color = Color(0.585681, 0, 0.0112599, 1)
+
+[node name="RemoveButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -304.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnmfu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_usp5n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d33yp")
+script = ExtResource("1_qodg5")
+
+[connection signal="pressed" from="." to="." method="remove_tiles"]

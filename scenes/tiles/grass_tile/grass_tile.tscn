@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxmtlrotthtmw"]
+
+[ext_resource type="Script" path="res://scenes/tiles/grass_tile/grass_tile.gd" id="1_ctxwv"]
+
+[sub_resource type="Gradient" id="Gradient_jdm7c"]
+offsets = PackedFloat32Array(0, 0.331169, 0.564935, 0.753247, 0.961039, 1)
+colors = PackedColorArray(0, 0.382375, 9.14484e-07, 1, 0.0392157, 0.584314, 0.0392157, 1, 0.0503916, 0.529559, 0.0503919, 1, 0.0464472, 0.548884, 0.0464473, 1, 0.0714286, 0.426491, 0.0714294, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bm0hl"]
+gradient = SubResource("Gradient_jdm7c")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md4on"]
+size = Vector2(64, 64)
+
+[node name="GrassTile" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ctxwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_bm0hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_md4on")

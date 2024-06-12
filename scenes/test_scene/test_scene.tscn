@@ -1,18 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=5 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
 [ext_resource type="PackedScene" uid="uid://bj3vggnrfkw37" path="res://scenes/tile_button/tile_button.tscn" id="3_ds1ks"]
+[ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
 
 [node name="TestScene" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_xmfsl")]
-position = Vector2(135, 93)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -6)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
 
 [node name="EmptySpaces" type="Node2D" parent="."]
 
@@ -58,6 +51,33 @@ position = Vector2(160, -32)
 [node name="EmptySpace18" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-32, -32)
 
+[node name="EmptySpace27" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 416)
+
+[node name="EmptySpace28" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, 416)
+
+[node name="EmptySpace29" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 416)
+
+[node name="EmptySpace31" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 416)
+
+[node name="EmptySpace32" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 352)
+
+[node name="EmptySpace33" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, 352)
+
+[node name="EmptySpace34" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 352)
+
+[node name="EmptySpace35" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(160, 352)
+
+[node name="EmptySpace36" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 352)
+
 [node name="EmptySpace10" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-32, 96)
 
@@ -94,7 +114,195 @@ position = Vector2(288, 224)
 [node name="EmptySpace26" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(288, 288)
 
+[node name="EmptySpace37" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 352)
+
+[node name="EmptySpace38" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 416)
+
+[node name="EmptySpace39" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 352)
+
+[node name="EmptySpace40" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 416)
+
+[node name="EmptySpace41" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, -32)
+
+[node name="EmptySpace42" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 32)
+
+[node name="EmptySpace43" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, -32)
+
+[node name="EmptySpace44" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 32)
+
+[node name="EmptySpace45" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 96)
+
+[node name="EmptySpace46" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 160)
+
+[node name="EmptySpace47" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 224)
+
+[node name="EmptySpace48" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 288)
+
+[node name="EmptySpace51" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 224)
+
+[node name="EmptySpace52" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 288)
+
+[node name="EmptySpace53" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 352)
+
+[node name="EmptySpace54" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 416)
+
+[node name="EmptySpace55" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 352)
+
+[node name="EmptySpace56" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 416)
+
+[node name="EmptySpace57" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, -32)
+
+[node name="EmptySpace58" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 32)
+
+[node name="EmptySpace59" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, -32)
+
+[node name="EmptySpace60" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 32)
+
+[node name="EmptySpace61" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 96)
+
+[node name="EmptySpace62" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 160)
+
+[node name="EmptySpace63" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 224)
+
+[node name="EmptySpace64" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 288)
+
+[node name="EmptySpace65" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 96)
+
+[node name="EmptySpace66" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 160)
+
+[node name="EmptySpace67" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 224)
+
+[node name="EmptySpace68" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 288)
+
+[node name="EmptySpace69" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 352)
+
+[node name="EmptySpace70" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 416)
+
+[node name="EmptySpace71" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 352)
+
+[node name="EmptySpace72" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 416)
+
+[node name="EmptySpace77" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 544)
+
+[node name="EmptySpace78" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, 544)
+
+[node name="EmptySpace79" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 544)
+
+[node name="EmptySpace80" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(160, 544)
+
+[node name="EmptySpace81" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 544)
+
+[node name="EmptySpace82" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(32, 480)
+
+[node name="EmptySpace83" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(224, 480)
+
+[node name="EmptySpace84" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 480)
+
+[node name="EmptySpace85" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(160, 480)
+
+[node name="EmptySpace86" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-32, 480)
+
+[node name="EmptySpace87" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 480)
+
+[node name="EmptySpace88" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(352, 544)
+
+[node name="EmptySpace89" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 480)
+
+[node name="EmptySpace90" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 544)
+
+[node name="EmptySpace91" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 480)
+
+[node name="EmptySpace92" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 544)
+
+[node name="EmptySpace93" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 480)
+
+[node name="EmptySpace94" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(416, 544)
+
+[node name="EmptySpace95" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 480)
+
+[node name="EmptySpace96" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 544)
+
+[node name="EmptySpace97" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 480)
+
+[node name="EmptySpace98" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 544)
+
+[node name="EmptySpace73" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, -32)
+
+[node name="EmptySpace74" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 32)
+
+[node name="EmptySpace75" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, -32)
+
+[node name="EmptySpace76" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-160, 32)
+
 [node name="SpawnedTiles" type="Node2D" parent="." groups=["spawned_tiles"]]
+
+[node name="Player" parent="." instance=ExtResource("1_xmfsl")]
+position = Vector2(135, 93)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -6)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
@@ -115,7 +323,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = 62.0
-offset_right = -128.0
-offset_bottom = 70.0
+offset_left = -92.0
+offset_top = 61.0
+offset_right = -84.0
+offset_bottom = 69.0
+
+[node name="TileButton2" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 61.0
+offset_right = -66.0
+offset_bottom = 69.0
+
+[node name="RemoveButton" parent="Hud/Control" instance=ExtResource("4_423jr")]
+layout_mode = 1
+offset_left = 238.0
+offset_top = 149.0
+offset_right = -66.0
+offset_bottom = -15.0

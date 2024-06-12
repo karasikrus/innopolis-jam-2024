@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj3vggnrfkw37"]
+[gd_scene load_steps=5 format=3 uid="uid://bj3vggnrfkw37"]
 
 [ext_resource type="Script" path="res://scenes/tile_button/tile_button.gd" id="1_u8qcb"]
 [ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="2_gn6x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ijhj"]
+bg_color = Color(0.418626, 0.682921, 0.254554, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mck04"]
+bg_color = Color(0.419608, 0.913725, 0.254902, 1)
 
 [node name="TileButton" type="Button"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -304.0
-offset_bottom = -164.0
+offset_right = -288.0
+offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ijhj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mck04")
 script = ExtResource("1_u8qcb")
 tile_to_spawn = ExtResource("2_gn6x6")
 
