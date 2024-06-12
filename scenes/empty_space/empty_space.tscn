@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/empty_space/empty_space.gd" id="1_xn4xa"]
 
 [sub_resource type="Gradient" id="Gradient_aasic"]
-offsets = PackedFloat32Array(0, 0.935065, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.175325, 0.175325, 0.175325, 1, 0.821789, 0.821789, 0.821789, 1)
+offsets = PackedFloat32Array(0.728155, 0.97411, 1)
+colors = PackedColorArray(0.0387623, 0.0387623, 0.0387623, 1, 0.0448688, 0.0448688, 0.0448688, 1, 0.344076, 0.344076, 0.344075, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ghsuy"]
 gradient = SubResource("Gradient_aasic")
@@ -25,9 +25,11 @@ script = ExtResource("1_xn4xa")
 texture = SubResource("GradientTexture2D_ghsuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_qu2qt")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 

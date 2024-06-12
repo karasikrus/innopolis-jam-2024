@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=7 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
 [ext_resource type="PackedScene" uid="uid://bj3vggnrfkw37" path="res://scenes/tile_button/tile_button.tscn" id="3_ds1ks"]
 [ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
 
+[sub_resource type="Gradient" id="Gradient_aykyt"]
+offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
+colors = PackedColorArray(0.00471394, 0.338081, 0.00432628, 1, 0, 0.467402, 0.0008291, 1, 0.00762402, 0.444444, 0.00693891, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yn1nj"]
+gradient = SubResource("Gradient_aykyt")
+
 [node name="TestScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(140, 297)
+scale = Vector2(16.0173, 16.0777)
+texture = SubResource("GradientTexture2D_yn1nj")
 
 [node name="EmptySpaces" type="Node2D" parent="."]
 
