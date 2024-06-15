@@ -131,3 +131,6 @@ func _on_kick_area_2d_body_exited(body):
 func check_fall_ray_casts() -> bool:
 	print(ray_cast_2d.is_colliding())
 	return ray_cast_2d.is_colliding() and ray_cast_2d_2.is_colliding() and ray_cast_2d_3.is_colliding() and ray_cast_2d_4.is_colliding()
+	
+func kill_player():
+	pass
