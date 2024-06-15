@@ -8,6 +8,7 @@ class_name Player
 @onready var ray_cast_2d_3 = $fall_checks/RayCast2D3
 @onready var ray_cast_2d_4 = $fall_checks/RayCast2D4
 
+@onready var sprite_2d = $Sprite2D
 
 
 var speed = 100  # speed in pixels/sec
@@ -16,22 +17,34 @@ var face_direction : Vector2 = Vector2.ZERO
 var is_kicking := false
 var is_talking := false
 var is_falling := false
+var is_dead := false
+var is_respawning := false
 
 var frog : Frog
 var current_npc : Npc
 
+var respawn_point : Vector2 = Vector2.ZERO
 
 func _process(delta):
 	animate()
 
 
 func _physics_process(delta):
-	if is_talking or is_falling:
+	if is_respawning:
+		is_respawning = false
+		is_falling = false
+		global_position = respawn_point
+		animation_player.play("respawn")
 		return
 	
-	if check_fall_ray_casts():
+	if is_talking or is_falling or is_dead:
+		return
+	
+	if  check_fall_ray_casts():
 		animation_player.play("fall")
+		is_dead = true
 		is_falling = true
+		return
 	
 	direction = Input.get_vector("left", "right", "up", "down")
 	face_direction = get_face_direction(direction)
@@ -54,8 +67,7 @@ func kick():
 		frog.kick(face_direction)
 	if current_npc:
 		current_npc.kick(self)
-	
-	
+
 
 func stop_kicking(anim_name: StringName):
 	if anim_name != "kick_down":
@@ -83,7 +95,7 @@ func get_face_direction(dir : Vector2) -> Vector2:
 	
 
 func animate():
-	if is_kicking or is_falling:
+	if is_kicking or is_falling or is_dead or is_respawning:
 		return
 	if direction.length() > 0.001 and velocity.length() > 0.001:
 		animate_walk()
@@ -134,3 +146,17 @@ func check_fall_ray_casts() -> bool:
 	
 func kill_player():
 	pass
+
+
+func Respawn():
+	is_respawning = true
+	global_position = respawn_point
+
+
+func FinishRespawn():
+	is_dead = false
+
+func _on_checkpoint_area_2d_area_entered(area):
+	var checkpoint = area as Checkpoint
+	if checkpoint:
+		respawn_point = (checkpoint.player_spawn as Node2D).global_position

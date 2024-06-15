@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=15 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://dse8sjhghmxif" path="res://scenes/cannon/cannon.tscn" id="1_tccjd"]
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" path="res://dialogs/timelines/timeline_test.dtl" id="5_ymo8q"]
 [ext_resource type="PackedScene" uid="uid://jrbb5vbnueub" path="res://scenes/tiles/mirroring_tile/mirroring_stone.tscn" id="9_p8tmq"]
 [ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="9_s2sxx"]
+[ext_resource type="PackedScene" uid="uid://bt03oxao3n0ny" path="res://scenes/checkpoint/checkpoint.tscn" id="11_m3c2r"]
 
 [sub_resource type="Gradient" id="Gradient_aykyt"]
 offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
@@ -17,6 +18,9 @@ colors = PackedColorArray(0.00471394, 0.338081, 0.00432628, 1, 0, 0.467402, 0.00
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yn1nj"]
 gradient = SubResource("Gradient_aykyt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hdid"]
+size = Vector2(66.75, 127.625)
 
 [node name="TestScene" type="Node2D"]
 
@@ -392,3 +396,23 @@ offset_left = 238.0
 offset_top = 149.0
 offset_right = -66.0
 offset_bottom = -15.0
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("11_m3c2r")]
+position = Vector2(154, 145)
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint" index="0"]
+position = Vector2(6.5, 48.5)
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("11_m3c2r")]
+
+[node name="CollisionShape2D" parent="Checkpoints/Checkpoint2" index="0"]
+position = Vector2(416.625, 128.188)
+shape = SubResource("RectangleShape2D_5hdid")
+
+[node name="PlayerSpawn" parent="Checkpoints/Checkpoint2" index="1"]
+position = Vector2(417, 134)
+
+[editable path="Checkpoints/Checkpoint"]
+[editable path="Checkpoints/Checkpoint2"]

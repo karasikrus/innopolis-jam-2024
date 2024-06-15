@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt03oxao3n0ny"]
+
+[ext_resource type="Script" path="res://scenes/checkpoint/checkpoint.gd" id="1_ec6s4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6xmv"]
+size = Vector2(189.5, 256.25)
+
+[node name="Checkpoint" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_ec6s4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22.75)
+shape = SubResource("RectangleShape2D_k6xmv")
+debug_color = Color(0.530845, 0.539373, 0.520716, 0.42)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="FrogSpawn" type="Node2D" parent="PlayerSpawn"]
+position = Vector2(0, -16)
