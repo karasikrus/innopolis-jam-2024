@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=8 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
 [ext_resource type="PackedScene" uid="uid://bj3vggnrfkw37" path="res://scenes/tile_button/tile_button.tscn" id="3_ds1ks"]
 [ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
+[ext_resource type="PackedScene" uid="uid://tl8cl031ngk2" path="res://scenes/frog/frog.tscn" id="5_e0w7l"]
 
 [sub_resource type="Gradient" id="Gradient_aykyt"]
 offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
@@ -358,3 +359,6 @@ offset_left = 238.0
 offset_top = 149.0
 offset_right = -66.0
 offset_bottom = -15.0
+
+[node name="Frog" parent="." instance=ExtResource("5_e0w7l")]
+position = Vector2(109, 122)

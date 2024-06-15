@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://em746ojbru07"]
+
+[node name="TestSound" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
