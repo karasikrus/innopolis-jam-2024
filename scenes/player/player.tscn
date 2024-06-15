@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://coj0ji72ish6p"]
+[gd_scene load_steps=32 format=3 uid="uid://coj0ji72ish6p"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pjg7b"]
 [ext_resource type="AudioStream" uid="uid://c5ieme174lge2" path="res://sounds/Kick/Kick.wav" id="2_7ywyx"]
@@ -64,6 +64,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_cyg67"]
@@ -680,9 +704,74 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_dx7ic"]
+resource_name = "fall"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_hrpdd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.67035, 4.59022]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bg1q8"]
 _data = {
 "RESET": SubResource("Animation_0ogp3"),
+"fall": SubResource("Animation_dx7ic"),
 "idle_down": SubResource("Animation_cyg67"),
 "idle_left": SubResource("Animation_k38av"),
 "idle_right": SubResource("Animation_kjcec"),
@@ -698,12 +787,12 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ycmma"]
-radius = 7.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pl4bl"]
-radius = 11.0454
+radius = 16.0312
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 8
 motion_mode = 1
@@ -729,12 +818,12 @@ autoplay = "idle_down"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -7)
+position = Vector2(0, -16)
 texture = ExtResource("6_d8rh6")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_ycmma")
 
 [node name="KickArea2D" type="Area2D" parent="."]
@@ -742,8 +831,36 @@ collision_layer = 0
 collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea2D"]
-position = Vector2(0, -7)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_pl4bl")
+
+[node name="fall_checks" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="fall_checks"]
+target_position = Vector2(0, 2)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="fall_checks"]
+position = Vector2(-3, 0)
+rotation = 1.5708
+target_position = Vector2(0, 2)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="fall_checks"]
+position = Vector2(0, -3)
+rotation = 3.14159
+target_position = Vector2(0, 2)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="fall_checks"]
+position = Vector2(3, 0)
+rotation = 4.71239
+target_position = Vector2(0, 2)
+collision_mask = 2
+hit_from_inside = true
 
 [connection signal="body_entered" from="KickArea2D" to="." method="_on_kick_area_2d_body_entered"]
 [connection signal="body_exited" from="KickArea2D" to="." method="_on_kick_area_2d_body_exited"]
