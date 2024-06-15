@@ -309,10 +309,16 @@ position = Vector2(-160, 32)
 
 [node name="SpawnedTiles" type="Node2D" parent="." groups=["spawned_tiles"]]
 
-[node name="Player" parent="." instance=ExtResource("1_xmfsl")]
+[node name="interactive_objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Frog" parent="interactive_objects" instance=ExtResource("5_e0w7l")]
+position = Vector2(109, 122)
+
+[node name="Player" parent="interactive_objects" instance=ExtResource("1_xmfsl")]
 position = Vector2(135, 93)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="interactive_objects/Player"]
 position = Vector2(0, -6)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -359,6 +365,3 @@ offset_left = 238.0
 offset_top = 149.0
 offset_right = -66.0
 offset_bottom = -15.0
-
-[node name="Frog" parent="." instance=ExtResource("5_e0w7l")]
-position = Vector2(109, 122)

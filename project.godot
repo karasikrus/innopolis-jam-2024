@@ -93,8 +93,10 @@ kick={
 
 [layer_names]
 
+2d_physics/layer_1="player"
 2d_physics/layer_2="empty_tile"
 2d_physics/layer_3="frog_kick"
+2d_physics/layer_4="wall"
 
 [rendering]
 
