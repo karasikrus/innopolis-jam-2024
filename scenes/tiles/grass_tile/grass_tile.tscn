@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxmtlrotthtmw"]
+[gd_scene load_steps=6 format=3 uid="uid://dxmtlrotthtmw"]
 
 [ext_resource type="Script" path="res://scenes/tiles/grass_tile/grass_tile.gd" id="1_ctxwv"]
+[ext_resource type="AudioStream" uid="uid://h2vnk4x6k21u" path="res://sounds/Placing/Placement.wav" id="2_ec2dt"]
 
 [sub_resource type="Gradient" id="Gradient_jdm7c"]
 offsets = PackedFloat32Array(0, 0.331169, 0.564935, 0.753247, 0.961039, 1)
@@ -24,3 +25,6 @@ texture = SubResource("GradientTexture2D_bm0hl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_md4on")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ec2dt")

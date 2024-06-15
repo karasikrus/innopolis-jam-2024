@@ -3,6 +3,8 @@ class_name TileButton
 
 @export var tile_to_spawn : PackedScene
 
+@onready var audio_stream_player = $AudioStreamPlayer
+
 var spawned_tile : DraggableTile
 var is_tile_placed := false
 
@@ -19,6 +21,7 @@ func spawn_draggable_tile():
 	spawned_tile.placed.connect(on_tile_placed)
 	visible = false
 	disabled = true
+	audio_stream_player.play()
 
 
 func on_tile_placed(successfully : bool):

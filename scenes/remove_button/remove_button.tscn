@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gellyt8g0j1f"]
+[gd_scene load_steps=6 format=3 uid="uid://gellyt8g0j1f"]
 
 [ext_resource type="Script" path="res://scenes/remove_button/remove_button.gd" id="1_qodg5"]
+[ext_resource type="AudioStream" uid="uid://bbmpl0yd0tclj" path="res://sounds/Placing/Displacement.wav" id="2_u8nse"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnmfu"]
 bg_color = Color(1, 0.342467, 0.283971, 1)
@@ -19,9 +20,13 @@ offset_right = -304.0
 offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_lnmfu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_usp5n")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d33yp")
 script = ExtResource("1_qodg5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u8nse")
 
 [connection signal="pressed" from="." to="." method="remove_tiles"]

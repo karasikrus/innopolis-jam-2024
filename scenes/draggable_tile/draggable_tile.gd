@@ -22,6 +22,7 @@ func on_mouse_released():
 		var tile = tile_to_spawn.instantiate() as Tile
 		get_tree().get_first_node_in_group(SPAWNED_TILES_GROUP_NAME).add_child(tile)
 		tile.global_position = empty_space.global_position
+		tile.placement()
 		placed.emit(true)
 	else:
 		placed.emit(false)

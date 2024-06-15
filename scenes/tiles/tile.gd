@@ -7,3 +7,7 @@ func _ready():
 
 func remove():
 	queue_free()
+
+
+func placement():
+	pass

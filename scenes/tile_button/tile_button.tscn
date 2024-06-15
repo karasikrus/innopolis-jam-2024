@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj3vggnrfkw37"]
+[gd_scene load_steps=6 format=3 uid="uid://bj3vggnrfkw37"]
 
 [ext_resource type="Script" path="res://scenes/tile_button/tile_button.gd" id="1_u8qcb"]
 [ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="2_gn6x6"]
+[ext_resource type="AudioStream" uid="uid://d2sweimmhqx7x" path="res://sounds/Selection/PieceSelection.wav" id="3_7o2ia"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ijhj"]
 bg_color = Color(0.418626, 0.682921, 0.254554, 1)
@@ -21,5 +22,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1ijhj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mck04")
 script = ExtResource("1_u8qcb")
 tile_to_spawn = ExtResource("2_gn6x6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7o2ia")
 
 [connection signal="button_down" from="." to="." method="spawn_draggable_tile"]
