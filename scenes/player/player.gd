@@ -3,12 +3,19 @@ class_name Player
 
 @onready var animation_player = $AnimationPlayer
 
+@onready var ray_cast_2d = $fall_checks/RayCast2D
+@onready var ray_cast_2d_2 = $fall_checks/RayCast2D2
+@onready var ray_cast_2d_3 = $fall_checks/RayCast2D3
+@onready var ray_cast_2d_4 = $fall_checks/RayCast2D4
+
+
 
 var speed = 100  # speed in pixels/sec
 var direction : Vector2 = Vector2.ZERO
 var face_direction : Vector2 = Vector2.ZERO
 var is_kicking := false
 var is_talking := false
+var is_falling := false
 
 var frog : Frog
 var current_npc : Npc
@@ -19,8 +26,12 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	if is_talking:
+	if is_talking or is_falling:
 		return
+	
+	if check_fall_ray_casts():
+		animation_player.play("fall")
+		is_falling = true
 	
 	direction = Input.get_vector("left", "right", "up", "down")
 	face_direction = get_face_direction(direction)
@@ -72,7 +83,7 @@ func get_face_direction(dir : Vector2) -> Vector2:
 	
 
 func animate():
-	if is_kicking:
+	if is_kicking or is_falling:
 		return
 	if direction.length() > 0.001 and velocity.length() > 0.001:
 		animate_walk()
@@ -115,3 +126,8 @@ func _on_kick_area_2d_body_exited(body):
 		frog = null
 	elif body is Npc:
 		current_npc = null
+
+
+func check_fall_ray_casts() -> bool:
+	print(ray_cast_2d.is_colliding())
+	return ray_cast_2d.is_colliding() and ray_cast_2d_2.is_colliding() and ray_cast_2d_3.is_colliding() and ray_cast_2d_4.is_colliding()
