@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk3ssxfxeyhbh"]
+
+[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="1_k6nwh"]
+[ext_resource type="Script" path="res://scenes/npc/npc.gd" id="1_nmck2"]
+
+[sub_resource type="Animation" id="Animation_t1f51"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qo73h"]
+_data = {
+"idle": SubResource("Animation_t1f51")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glnyt"]
+radius = 17.0
+
+[node name="Npc" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_nmck2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qo73h")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_k6nwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_glnyt")

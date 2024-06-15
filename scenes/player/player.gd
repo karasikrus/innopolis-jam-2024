@@ -8,8 +8,10 @@ var speed = 100  # speed in pixels/sec
 var direction : Vector2 = Vector2.ZERO
 var face_direction : Vector2 = Vector2.ZERO
 var is_kicking := false
+var is_talking := false
 
 var frog : Frog
+var current_npc : Npc
 
 
 func _process(delta):
@@ -17,6 +19,9 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	if is_talking:
+		return
+	
 	direction = Input.get_vector("left", "right", "up", "down")
 	face_direction = get_face_direction(direction)
 	velocity = direction * speed
@@ -34,9 +39,11 @@ func kick():
 	is_kicking = true
 	animation_player.play("kick_down")
 	animation_player.animation_finished.connect(stop_kicking)
-	if frog == null:
-		return
-	frog.kick(face_direction)
+	if frog:
+		frog.kick(face_direction)
+	if current_npc:
+		current_npc.kick(self)
+	
 	
 
 func stop_kicking(anim_name: StringName):
@@ -75,9 +82,15 @@ func animate():
 
 
 func _on_kick_area_2d_body_entered(body):
-	frog = body as Frog
+	if body is Frog:
+		frog = body as Frog
+	elif body is Npc:
+		current_npc = body as Npc
 	
 
 
 func _on_kick_area_2d_body_exited(body):
-	frog = null
+	if body is Frog:
+		frog = null
+	elif body is Npc:
+		current_npc = null

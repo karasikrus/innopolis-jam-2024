@@ -28,7 +28,8 @@ directories/dch_directory={
 "character_test": "res://scenes/dialogues/characters/character_test.dch"
 }
 directories/dtl_directory={
-"timeline_test": "res://scenes/dialogues/timelines/timeline_test.dtl"
+"timeline_test": "res://scenes/dialogues/timelines/timeline_test.dtl",
+"timelines/timeline_test": "res://dialogs/timelines/timeline_test.dtl"
 }
 layout/style_list=["res://scenes/dialogues/styles/default_style.tres"]
 layout/default_style="res://scenes/dialogues/styles/default_style.tres"
@@ -97,6 +98,7 @@ kick={
 2d_physics/layer_2="empty_tile"
 2d_physics/layer_3="frog_kick"
 2d_physics/layer_4="wall"
+2d_physics/layer_5="npc_kick"
 
 [rendering]
 

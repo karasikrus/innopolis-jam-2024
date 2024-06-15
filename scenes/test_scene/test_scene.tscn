@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=10 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
 [ext_resource type="PackedScene" uid="uid://bj3vggnrfkw37" path="res://scenes/tile_button/tile_button.tscn" id="3_ds1ks"]
+[ext_resource type="PackedScene" uid="uid://dk3ssxfxeyhbh" path="res://scenes/npc/npc.tscn" id="4_4vq7h"]
 [ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
 [ext_resource type="PackedScene" uid="uid://tl8cl031ngk2" path="res://scenes/frog/frog.tscn" id="5_e0w7l"]
+[ext_resource type="Resource" path="res://dialogs/timelines/timeline_test.dtl" id="5_ymo8q"]
 
 [sub_resource type="Gradient" id="Gradient_aykyt"]
 offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
@@ -322,6 +324,10 @@ position = Vector2(135, 93)
 position = Vector2(0, -6)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Npc" parent="interactive_objects" instance=ExtResource("4_4vq7h")]
+position = Vector2(233, 84)
+dialog = ExtResource("5_ymo8q")
 
 [node name="Hud" type="CanvasLayer" parent="."]
 

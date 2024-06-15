@@ -28,5 +28,6 @@ script = ExtResource("1_qodg5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_u8nse")
+volume_db = -15.0
 
 [connection signal="pressed" from="." to="." method="remove_tiles"]
