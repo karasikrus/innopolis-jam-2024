@@ -75,10 +75,31 @@ func animate():
 	if is_kicking:
 		return
 	if direction.length() > 0.001 and velocity.length() > 0.001:
-		animation_player.play("walk_down")
+		animate_walk()
 	else:
-		animation_player.play("idle_down")
+		animate_idle()
 
+
+func animate_walk():
+	if face_direction == Vector2.UP:
+		animation_player.play("walk_up")
+	elif face_direction == Vector2.LEFT:
+		animation_player.play('walk_left')
+	elif face_direction == Vector2.DOWN:
+		animation_player.play('walk_down')
+	elif face_direction == Vector2.RIGHT:
+		animation_player.play('walk_right')
+
+
+func animate_idle():
+	if face_direction == Vector2.UP:
+		animation_player.play("idle_up")
+	elif face_direction == Vector2.LEFT:
+		animation_player.play('idle_left')
+	elif face_direction == Vector2.DOWN:
+		animation_player.play('idle_down')
+	elif face_direction == Vector2.RIGHT:
+		animation_player.play('idle_right')
 
 
 func _on_kick_area_2d_body_entered(body):

@@ -322,6 +322,7 @@ position = Vector2(135, 93)
 
 [node name="Camera2D" type="Camera2D" parent="interactive_objects/Player"]
 position = Vector2(0, -6)
+process_callback = 0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
