@@ -9,7 +9,6 @@ class_name EmptySpace
 func _ready():
 	GlobalEvents.tiles_removed.connect(activate)
 
-
 func deactivate():
 	sprite_2d.visible = false
 	collision_shape_2d.disabled = true

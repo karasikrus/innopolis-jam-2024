@@ -1,14 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj3vggnrfkw37"]
+[gd_scene load_steps=11 format=3 uid="uid://bj3vggnrfkw37"]
 
 [ext_resource type="Script" path="res://scenes/tile_button/tile_button.gd" id="1_u8qcb"]
-[ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="2_gn6x6"]
+[ext_resource type="Script" path="res://scenes/draggable_tile/draggable_tile.gd" id="2_eg2ca"]
 [ext_resource type="AudioStream" uid="uid://d2sweimmhqx7x" path="res://sounds/Selection/PieceSelection.wav" id="3_7o2ia"]
+[ext_resource type="PackedScene" uid="uid://dxmtlrotthtmw" path="res://scenes/tiles/grass_tile/grass_tile.tscn" id="3_iueog"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ijhj"]
 bg_color = Color(0.418626, 0.682921, 0.254554, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mck04"]
 bg_color = Color(0.419608, 0.913725, 0.254902, 1)
+
+[sub_resource type="Gradient" id="Gradient_xlbaj"]
+offsets = PackedFloat32Array(0, 0.285714, 0.564935, 1)
+colors = PackedColorArray(0, 0.733333, 0, 1, 0.239303, 0.567177, 0.160167, 1, 0.0679503, 0.686153, 0.0454796, 1, 0.357793, 0.484906, 0.239474, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b5jco"]
+gradient = SubResource("Gradient_xlbaj")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0hf2"]
+radius = 26.0192
+
+[sub_resource type="PackedScene" id="PackedScene_0g41g"]
+_bundled = {
+"conn_count": 2,
+"conns": PackedInt32Array(0, 0, 11, 10, 2, 0, 0, 0, 0, 13, 12, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("DraggableTile", "collision_layer", "collision_mask", "script", "tile_to_spawn", "Area2D", "Sprite2D", "texture", "CollisionShape2D", "shape", "_on_area_entered", "area_entered", "_on_area_exited", "area_exited"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 6, 6, -1, 1, 7, 4, 0, 0, 0, 8, 8, -1, 1, 9, 5, 0),
+"variants": [0, 2, ExtResource("2_eg2ca"), ExtResource("3_iueog"), SubResource("GradientTexture2D_b5jco"), SubResource("CircleShape2D_k0hf2")],
+"version": 3
+}
 
 [node name="TileButton" type="Button"]
 anchors_preset = 15
@@ -21,7 +47,8 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ijhj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mck04")
 script = ExtResource("1_u8qcb")
-tile_to_spawn = ExtResource("2_gn6x6")
+tile_to_spawn = SubResource("PackedScene_0g41g")
+final_tile_to_spawn = ExtResource("3_iueog")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7o2ia")

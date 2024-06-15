@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dse8sjhghmxif"]
+
+[ext_resource type="Script" path="res://scenes/cannon/cannon.gd" id="1_k6s83"]
+
+[sub_resource type="Gradient" id="Gradient_uu24w"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4au8f"]
+gradient = SubResource("Gradient_uu24w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h70pl"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bllj8"]
+radius = 8.06226
+
+[node name="Cannon" type="Area2D"]
+script = ExtResource("1_k6s83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_4au8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_h70pl")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bllj8")
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(0, -27)

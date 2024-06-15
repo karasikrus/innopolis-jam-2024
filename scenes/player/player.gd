@@ -115,3 +115,6 @@ func _on_kick_area_2d_body_exited(body):
 		frog = null
 	elif body is Npc:
 		current_npc = null
+		
+func kill_player():
+	pass

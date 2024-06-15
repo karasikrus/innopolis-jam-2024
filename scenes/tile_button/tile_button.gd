@@ -5,8 +5,10 @@ class_name TileButton
 
 @onready var audio_stream_player = $AudioStreamPlayer
 
-var spawned_tile : DraggableTile
+var spawned_tile
 var is_tile_placed := false
+
+@export var final_tile_to_spawn : PackedScene
 
 const SPAWNED_TILES_GROUP_NAME = "spawned_tiles"
 
@@ -15,10 +17,11 @@ func _ready():
 
 
 func spawn_draggable_tile():
-	spawned_tile = tile_to_spawn.instantiate() as DraggableTile
+	spawned_tile = tile_to_spawn.instantiate()
 	get_tree().get_first_node_in_group(SPAWNED_TILES_GROUP_NAME).add_child(spawned_tile)
 	spawned_tile.global_position = get_global_mouse_position()
 	spawned_tile.placed.connect(on_tile_placed)
+	spawned_tile.tile_to_spawn = final_tile_to_spawn
 	visible = false
 	disabled = true
 	audio_stream_player.play()

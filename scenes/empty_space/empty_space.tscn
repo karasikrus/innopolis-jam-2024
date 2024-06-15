@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/empty_space/empty_space.gd" id="1_xn4xa"]
 
-[sub_resource type="Gradient" id="Gradient_aasic"]
+[sub_resource type="Gradient" id="Gradient_effvf"]
 offsets = PackedFloat32Array(0.728155, 0.97411, 1)
 colors = PackedColorArray(0.0387623, 0.0387623, 0.0387623, 1, 0.0448688, 0.0448688, 0.0448688, 1, 0.344076, 0.344076, 0.344075, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ghsuy"]
-gradient = SubResource("Gradient_aasic")
+gradient = SubResource("Gradient_effvf")
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.99, 0.99)

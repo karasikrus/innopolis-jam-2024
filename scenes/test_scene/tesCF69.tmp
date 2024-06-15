@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=12 format=3 uid="uid://4ru6vnvln4o6"]
 
+[ext_resource type="PackedScene" uid="uid://jrbb5vbnueub" path="res://scenes/mirroring_stone/mirroring_stone.tscn" id="1_56vhc"]
 [ext_resource type="PackedScene" uid="uid://dse8sjhghmxif" path="res://scenes/cannon/cannon.tscn" id="1_tccjd"]
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
@@ -8,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
 [ext_resource type="PackedScene" uid="uid://tl8cl031ngk2" path="res://scenes/frog/frog.tscn" id="5_e0w7l"]
 [ext_resource type="Resource" path="res://dialogs/timelines/timeline_test.dtl" id="5_ymo8q"]
-[ext_resource type="PackedScene" uid="uid://jrbb5vbnueub" path="res://scenes/tiles/mirroring_tile/mirroring_stone.tscn" id="9_p8tmq"]
-[ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="9_s2sxx"]
 
 [sub_resource type="Gradient" id="Gradient_aykyt"]
 offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
@@ -26,6 +25,10 @@ scale = Vector2(16.0173, 16.0777)
 texture = SubResource("GradientTexture2D_yn1nj")
 
 [node name="EmptySpaces" type="Node2D" parent="."]
+
+[node name="MirroringStone" parent="EmptySpaces" instance=ExtResource("1_56vhc")]
+position = Vector2(105, 171)
+scale = Vector2(0.5, 0.5)
 
 [node name="Cannon" parent="EmptySpaces" instance=ExtResource("1_tccjd")]
 position = Vector2(105, 271)
@@ -371,20 +374,6 @@ offset_left = -74.0
 offset_top = 61.0
 offset_right = -66.0
 offset_bottom = 69.0
-
-[node name="TileButton3" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.0
-offset_top = 61.0
-offset_right = -49.0
-offset_bottom = 69.0
-tile_to_spawn = ExtResource("9_s2sxx")
-final_tile_to_spawn = ExtResource("9_p8tmq")
 
 [node name="RemoveButton" parent="Hud/Control" instance=ExtResource("4_423jr")]
 layout_mode = 1
