@@ -4,15 +4,13 @@ class_name EmptySpace
 @onready var sprite_2d = $Sprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var area_2d = $Area2D
+@onready var animation_player = $AnimationPlayer
 
-@export var default_texture : Texture2D
-@export var higlight_texture : Texture2D
 
 
 func _ready():
 	GlobalEvents.tiles_removed.connect(activate)
 	GlobalEvents.tile_is_dragged.connect(update_highlight)
-	sprite_2d.texture = default_texture
 
 func deactivate():
 	sprite_2d.visible = false
@@ -29,6 +27,6 @@ func activate():
 
 func update_highlight(on : bool):
 	if on:
-		sprite_2d.texture = higlight_texture
+		animation_player.play("highlight")
 	else:
-		sprite_2d.texture = default_texture
+		animation_player.play("default")
