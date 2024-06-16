@@ -61,7 +61,7 @@ func kick():
 	if is_kicking:
 		return
 	is_kicking = true
-	animation_player.play("kick_down")
+	animate_kick()
 	animation_player.animation_finished.connect(stop_kicking)
 	if frog:
 		frog.kick(face_direction)
@@ -70,7 +70,7 @@ func kick():
 
 
 func stop_kicking(anim_name: StringName):
-	if anim_name != "kick_down":
+	if not anim_name in ["kick_down", "kick_up", "kick_left", "kick_right"]:
 		return
 	animation_player.animation_finished.disconnect(stop_kicking)
 	is_kicking = false
@@ -123,6 +123,17 @@ func animate_idle():
 		animation_player.play('idle_down')
 	elif face_direction == Vector2.RIGHT:
 		animation_player.play('idle_right')
+
+
+func animate_kick():
+	if face_direction == Vector2.UP:
+		animation_player.play("kick_up")
+	elif face_direction == Vector2.LEFT:
+		animation_player.play('kick_left')
+	elif face_direction == Vector2.DOWN:
+		animation_player.play('kick_down')
+	elif face_direction == Vector2.RIGHT:
+		animation_player.play('kick_right')
 
 
 func _on_kick_area_2d_body_entered(body):

@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpjt21c6jkol8"]
+[gd_scene load_steps=5 format=3 uid="uid://cpjt21c6jkol8"]
 
 [ext_resource type="Script" path="res://scenes/empty_space/empty_space.gd" id="1_xn4xa"]
-
-[sub_resource type="Gradient" id="Gradient_effvf"]
-offsets = PackedFloat32Array(0.728155, 0.97411, 1)
-colors = PackedColorArray(0.0387623, 0.0387623, 0.0387623, 1, 0.0448688, 0.0448688, 0.0448688, 1, 0.344076, 0.344076, 0.344075, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ghsuy"]
-gradient = SubResource("Gradient_effvf")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.99, 0.99)
+[ext_resource type="Texture2D" uid="uid://bqamkp2je0la3" path="res://scenes/empty_space/nothing.png" id="2_4kuhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu2qt"]
 size = Vector2(64, 64)
@@ -24,7 +15,9 @@ collision_mask = 0
 script = ExtResource("1_xn4xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_ghsuy")
+texture_filter = 1
+scale = Vector2(1.99, 1.99)
+texture = ExtResource("2_4kuhc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
