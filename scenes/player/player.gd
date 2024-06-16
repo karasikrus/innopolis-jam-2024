@@ -154,7 +154,8 @@ func _on_kick_area_2d_body_exited(body):
 func check_fall_ray_casts() -> bool:
 	print(ray_cast_2d.is_colliding())
 	return ray_cast_2d.is_colliding() and ray_cast_2d_2.is_colliding() and ray_cast_2d_3.is_colliding() and ray_cast_2d_4.is_colliding()
-	
+
+
 func kill_player():
 	pass
 
@@ -179,7 +180,8 @@ func _on_checkpoint_area_2d_area_entered(area):
 func get_new_block(index: int):
 	animation_player.play("new_block")
 	animation_player.animation_finished.connect(finish_getting_new_block.bind(index))
-	
+
+
 func finish_getting_new_block(anim_name: StringName, index : int):
 	if anim_name != "new_block":
 		return

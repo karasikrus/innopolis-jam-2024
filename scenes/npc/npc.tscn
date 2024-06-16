@@ -1,13 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk3ssxfxeyhbh"]
+[gd_scene load_steps=7 format=3 uid="uid://dk3ssxfxeyhbh"]
 
 [ext_resource type="Script" path="res://scenes/npc/npc.gd" id="1_nmck2"]
-[ext_resource type="Texture2D" uid="uid://4pmpw1gyv3yw" path="res://scenes/npc/npc1.png" id="2_x6c54"]
+[ext_resource type="Texture2D" uid="uid://6vbyysy3o6e2" path="res://scenes/npc/npc 1 idle.png" id="2_hjsv0"]
 
 [sub_resource type="Animation" id="Animation_t1f51"]
 resource_name = "idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_2gwlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qo73h"]
 _data = {
+"RESET": SubResource("Animation_2gwlt"),
 "idle": SubResource("Animation_t1f51")
 }
 
@@ -23,10 +53,12 @@ script = ExtResource("1_nmck2")
 libraries = {
 "": SubResource("AnimationLibrary_qo73h")
 }
+autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_x6c54")
+texture = ExtResource("2_hjsv0")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_glnyt")

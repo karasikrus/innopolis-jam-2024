@@ -9,6 +9,8 @@ const SPAWNED_TILES_GROUP_NAME = "spawned_tiles"
 
 var empty_space : EmptySpace
 
+func _ready():
+	GlobalEvents.emit_tile_is_dragged(true)
 
 func _process(delta):
 	global_position = get_global_mouse_position()
@@ -26,6 +28,7 @@ func on_mouse_released():
 		placed.emit(true)
 	else:
 		placed.emit(false)
+	GlobalEvents.emit_tile_is_dragged(false)
 	queue_free()
 
 

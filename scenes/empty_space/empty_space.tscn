@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpjt21c6jkol8"]
+[gd_scene load_steps=6 format=3 uid="uid://cpjt21c6jkol8"]
 
 [ext_resource type="Script" path="res://scenes/empty_space/empty_space.gd" id="1_xn4xa"]
 [ext_resource type="Texture2D" uid="uid://ciwt42k6cft43" path="res://scenes/empty_space/empty 3x3 3.png" id="2_7i3qw"]
+[ext_resource type="Texture2D" uid="uid://nct63okrg0n1" path="res://scenes/empty_space/empty 3x3 GRID 3.png" id="3_qwvcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu2qt"]
 size = Vector2(96, 96)
@@ -13,6 +14,8 @@ radius = 29.0
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_xn4xa")
+default_texture = ExtResource("2_7i3qw")
+higlight_texture = ExtResource("3_qwvcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
