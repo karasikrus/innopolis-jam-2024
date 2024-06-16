@@ -15,6 +15,9 @@ func area_intersection(body: Node2D):
 		intersection_with_player(body as Player)
 	elif body is MirroringStone:
 		intersection_with_mirroring_stone(body)
+	elif body is WoodenBox:
+		body.queue_free()
+		queue_free()
 	else:
 		intersection_with_static_object()
 
@@ -29,6 +32,7 @@ func intersection_with_player(player):
 func intersection_with_mirroring_stone(stone):
 	pass #(dsmoliakov): map direction with stone
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	var delta_pos = direction_vectors[flight_direction] * velocity * delta
 	position += delta_pos

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://6h2n1dbkcqkv"]
+
+[ext_resource type="Script" path="res://scenes/wooden_box/wooden_box.gd" id="1_c265w"]
+[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="2_mrujh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xvo5"]
+size = Vector2(125, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gk4n"]
+size = Vector2(125, 124)
+
+[node name="WoodenBox" type="StaticBody2D"]
+collision_layer = 9
+script = ExtResource("1_c265w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mrujh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_4xvo5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, -2)
+shape = SubResource("RectangleShape2D_7gk4n")
+
+[connection signal="area_entered" from="Area2D" to="." method="area_entered"]

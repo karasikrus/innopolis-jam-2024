@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=16 format=3 uid="uid://4ru6vnvln4o6"]
 
+[ext_resource type="PackedScene" uid="uid://6h2n1dbkcqkv" path="res://scenes/wooden_box/wooden_box.tscn" id="1_6ia46"]
 [ext_resource type="PackedScene" uid="uid://dse8sjhghmxif" path="res://scenes/cannon/cannon.tscn" id="1_tccjd"]
 [ext_resource type="PackedScene" uid="uid://coj0ji72ish6p" path="res://scenes/player/player.tscn" id="1_xmfsl"]
 [ext_resource type="PackedScene" uid="uid://cpjt21c6jkol8" path="res://scenes/empty_space/empty_space.tscn" id="2_jwmpd"]
@@ -30,6 +31,10 @@ scale = Vector2(16.0173, 16.0777)
 texture = SubResource("GradientTexture2D_yn1nj")
 
 [node name="EmptySpaces" type="Node2D" parent="."]
+
+[node name="WoodenBox" parent="EmptySpaces" instance=ExtResource("1_6ia46")]
+position = Vector2(105, 112)
+scale = Vector2(0.2, 0.2)
 
 [node name="EmptySpace" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-96, 0)
