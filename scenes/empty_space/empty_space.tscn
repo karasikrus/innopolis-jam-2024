@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpjt21c6jkol8"]
 
 [ext_resource type="Script" path="res://scenes/empty_space/empty_space.gd" id="1_xn4xa"]
-[ext_resource type="Texture2D" uid="uid://bqamkp2je0la3" path="res://scenes/empty_space/nothing.png" id="2_4kuhc"]
+[ext_resource type="Texture2D" uid="uid://ciwt42k6cft43" path="res://scenes/empty_space/empty 3x3 3.png" id="2_7i3qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu2qt"]
-size = Vector2(64, 64)
+size = Vector2(96, 96)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjshc"]
-radius = 8.06226
+radius = 29.0
 
 [node name="EmptySpace" type="StaticBody2D"]
 collision_layer = 2
@@ -16,8 +16,7 @@ script = ExtResource("1_xn4xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.99, 1.99)
-texture = ExtResource("2_4kuhc")
+texture = ExtResource("2_7i3qw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

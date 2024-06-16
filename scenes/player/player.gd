@@ -159,13 +159,16 @@ func kill_player():
 	pass
 
 
-func Respawn():
+func respawn():
 	is_respawning = true
 	global_position = respawn_point
 
 
-func FinishRespawn():
+func finish_respawn():
 	is_dead = false
+	is_falling = false
+	is_kicking = false
+	is_talking = false
 
 func _on_checkpoint_area_2d_area_entered(area):
 	var checkpoint = area as Checkpoint

@@ -20,7 +20,7 @@ colors = PackedColorArray(0.00471394, 0.338081, 0.00432628, 1, 0, 0.467402, 0.00
 gradient = SubResource("Gradient_aykyt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hdid"]
-size = Vector2(66.75, 127.625)
+size = Vector2(96.375, 189.813)
 
 [node name="TestScene" type="Node2D"]
 
@@ -31,293 +31,208 @@ texture = SubResource("GradientTexture2D_yn1nj")
 
 [node name="EmptySpaces" type="Node2D" parent="."]
 
-[node name="Cannon" parent="EmptySpaces" instance=ExtResource("1_tccjd")]
-position = Vector2(105, 271)
-
 [node name="EmptySpace" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 32)
+position = Vector2(-96, 0)
 
 [node name="EmptySpace2" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, 32)
 
 [node name="EmptySpace3" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, 32)
-
-[node name="EmptySpace4" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(160, 32)
-
-[node name="EmptySpace5" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 96)
-
-[node name="EmptySpace6" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 160)
-
-[node name="EmptySpace7" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 224)
-
-[node name="EmptySpace8" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 288)
-
-[node name="EmptySpace9" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 32)
-
-[node name="EmptySpace14" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, -32)
-
-[node name="EmptySpace15" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, -32)
-
-[node name="EmptySpace16" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, -32)
-
-[node name="EmptySpace17" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(160, -32)
-
-[node name="EmptySpace18" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, -32)
-
-[node name="EmptySpace27" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 416)
-
-[node name="EmptySpace28" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, 416)
-
-[node name="EmptySpace29" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, 416)
-
-[node name="EmptySpace31" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 416)
-
-[node name="EmptySpace32" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 352)
-
-[node name="EmptySpace33" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, 352)
-
-[node name="EmptySpace34" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, 352)
-
-[node name="EmptySpace35" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(160, 352)
-
-[node name="EmptySpace36" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 352)
-
-[node name="EmptySpace10" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 96)
-
-[node name="EmptySpace11" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 160)
-
-[node name="EmptySpace12" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 224)
-
-[node name="EmptySpace13" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 288)
-
-[node name="EmptySpace19" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 96)
-
-[node name="EmptySpace20" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 160)
-
-[node name="EmptySpace21" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 224)
-
-[node name="EmptySpace22" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 288)
-
-[node name="EmptySpace23" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 96)
-
-[node name="EmptySpace24" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 160)
-
-[node name="EmptySpace25" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 224)
-
-[node name="EmptySpace26" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 288)
-
-[node name="EmptySpace37" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 352)
-
-[node name="EmptySpace38" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 416)
-
-[node name="EmptySpace39" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 352)
-
-[node name="EmptySpace40" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 416)
-
-[node name="EmptySpace41" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, -32)
-
-[node name="EmptySpace42" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 32)
-
-[node name="EmptySpace43" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, -32)
-
-[node name="EmptySpace44" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 32)
-
-[node name="EmptySpace45" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 96)
-
-[node name="EmptySpace46" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 160)
-
-[node name="EmptySpace47" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 224)
-
-[node name="EmptySpace48" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 288)
-
-[node name="EmptySpace51" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 224)
-
-[node name="EmptySpace52" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 288)
-
-[node name="EmptySpace53" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 352)
-
-[node name="EmptySpace54" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 416)
-
-[node name="EmptySpace55" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 352)
-
-[node name="EmptySpace56" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 416)
-
-[node name="EmptySpace57" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, -32)
-
-[node name="EmptySpace58" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 32)
-
-[node name="EmptySpace59" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, -32)
-
-[node name="EmptySpace60" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 32)
-
-[node name="EmptySpace61" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-96, 96)
 
-[node name="EmptySpace62" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 160)
+[node name="EmptySpace4" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 96)
 
-[node name="EmptySpace63" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 224)
+[node name="EmptySpace5" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 192)
 
-[node name="EmptySpace64" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+[node name="EmptySpace6" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 192)
+
+[node name="EmptySpace7" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-96, 288)
 
-[node name="EmptySpace65" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 96)
+[node name="EmptySpace8" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 288)
 
-[node name="EmptySpace66" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 160)
+[node name="EmptySpace9" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 384)
 
-[node name="EmptySpace67" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 224)
+[node name="EmptySpace10" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 384)
 
-[node name="EmptySpace68" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 288)
+[node name="EmptySpace11" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 384)
 
-[node name="EmptySpace69" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 352)
+[node name="EmptySpace12" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(192, 384)
 
-[node name="EmptySpace70" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 416)
+[node name="EmptySpace13" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 384)
 
-[node name="EmptySpace71" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 352)
+[node name="EmptySpace14" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 384)
 
-[node name="EmptySpace72" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 416)
+[node name="EmptySpace15" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 288)
 
-[node name="EmptySpace77" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 544)
+[node name="EmptySpace16" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 192)
 
-[node name="EmptySpace78" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, 544)
+[node name="EmptySpace17" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 96)
 
-[node name="EmptySpace79" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, 544)
+[node name="EmptySpace18" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 0)
 
-[node name="EmptySpace80" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(160, 544)
+[node name="EmptySpace19" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 0)
 
-[node name="EmptySpace81" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 544)
+[node name="EmptySpace20" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(192, 0)
 
-[node name="EmptySpace82" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(32, 480)
+[node name="EmptySpace21" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 0)
 
-[node name="EmptySpace83" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(224, 480)
+[node name="EmptySpace22" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 0)
 
-[node name="EmptySpace84" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(96, 480)
+[node name="EmptySpace23" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 96)
 
-[node name="EmptySpace85" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(160, 480)
+[node name="EmptySpace24" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 192)
 
-[node name="EmptySpace86" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-32, 480)
+[node name="EmptySpace25" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 288)
 
-[node name="EmptySpace87" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 480)
+[node name="EmptySpace26" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 384)
 
-[node name="EmptySpace88" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(352, 544)
+[node name="EmptySpace27" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 384)
 
-[node name="EmptySpace89" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+[node name="EmptySpace28" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 384)
+
+[node name="EmptySpace29" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 288)
+
+[node name="EmptySpace30" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 192)
+
+[node name="EmptySpace31" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 288)
+
+[node name="EmptySpace32" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 0)
+
+[node name="EmptySpace33" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 0)
+
+[node name="EmptySpace34" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 96)
+
+[node name="EmptySpace35" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(288, 480)
 
-[node name="EmptySpace90" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(288, 544)
+[node name="EmptySpace36" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 480)
 
-[node name="EmptySpace91" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 480)
+[node name="EmptySpace37" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 576)
 
-[node name="EmptySpace92" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(480, 544)
+[node name="EmptySpace38" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 576)
 
-[node name="EmptySpace93" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 480)
+[node name="EmptySpace39" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(192, 672)
 
-[node name="EmptySpace94" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(416, 544)
+[node name="EmptySpace40" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(96, 672)
 
-[node name="EmptySpace95" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+[node name="EmptySpace41" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 672)
+
+[node name="EmptySpace42" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 576)
+
+[node name="EmptySpace43" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(0, 480)
+
+[node name="EmptySpace44" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
 position = Vector2(-96, 480)
 
-[node name="EmptySpace96" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 544)
+[node name="EmptySpace45" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 576)
 
-[node name="EmptySpace97" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 480)
+[node name="EmptySpace46" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-96, 672)
 
-[node name="EmptySpace98" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 544)
+[node name="EmptySpace47" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(288, 672)
 
-[node name="EmptySpace73" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, -32)
+[node name="EmptySpace48" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 672)
 
-[node name="EmptySpace74" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-96, 32)
+[node name="EmptySpace49" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 576)
 
-[node name="EmptySpace75" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, -32)
+[node name="EmptySpace50" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(384, 480)
 
-[node name="EmptySpace76" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
-position = Vector2(-160, 32)
+[node name="EmptySpace51" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 480)
+
+[node name="EmptySpace52" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 480)
+
+[node name="EmptySpace53" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 480)
+
+[node name="EmptySpace54" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 576)
+
+[node name="EmptySpace55" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 576)
+
+[node name="EmptySpace56" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 576)
+
+[node name="EmptySpace57" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(480, 672)
+
+[node name="EmptySpace58" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(576, 672)
+
+[node name="EmptySpace59" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(672, 672)
+
+[node name="EmptySpace60" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 0)
+
+[node name="EmptySpace61" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 96)
+
+[node name="EmptySpace62" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 192)
+
+[node name="EmptySpace63" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 288)
+
+[node name="EmptySpace64" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 384)
+
+[node name="EmptySpace65" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 480)
+
+[node name="EmptySpace66" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 576)
+
+[node name="EmptySpace67" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 672)
+
+[node name="EmptySpace68" parent="EmptySpaces" instance=ExtResource("2_jwmpd")]
+position = Vector2(-192, 672)
 
 [node name="SpawnedTiles" type="Node2D" parent="." groups=["spawned_tiles"]]
 
@@ -340,6 +255,9 @@ rotation_smoothing_enabled = true
 position = Vector2(233, 84)
 dialog = ExtResource("5_ymo8q")
 unloked_block_index = 1
+
+[node name="Cannon" parent="interactive_objects" instance=ExtResource("1_tccjd")]
+position = Vector2(105, 271)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
@@ -404,16 +322,19 @@ offset_bottom = -15.0
 position = Vector2(154, 145)
 
 [node name="CollisionShape2D" parent="Checkpoints/Checkpoint" index="0"]
-position = Vector2(6.5, 48.5)
+position = Vector2(37.5, 46.5)
+
+[node name="PlayerSpawn" parent="Checkpoints/Checkpoint" index="1"]
+position = Vector2(-20, -23)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("11_m3c2r")]
 
 [node name="CollisionShape2D" parent="Checkpoints/Checkpoint2" index="0"]
-position = Vector2(416.625, 128.188)
+position = Vector2(575.813, 144.094)
 shape = SubResource("RectangleShape2D_5hdid")
 
 [node name="PlayerSpawn" parent="Checkpoints/Checkpoint2" index="1"]
-position = Vector2(417, 134)
+position = Vector2(575, 128)
 
 [editable path="Checkpoints/Checkpoint"]
 [editable path="Checkpoints/Checkpoint2"]
