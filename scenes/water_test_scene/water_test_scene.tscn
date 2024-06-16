@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://er4dehtvsmy2"]
+
+[ext_resource type="PackedScene" uid="uid://bjjki66vwn2wp" path="res://scenes/boat/boat.tscn" id="1_dj4yt"]
+[ext_resource type="PackedScene" uid="uid://bt13cipvlc8nm" path="res://scenes/tiles/water_tile/water_tile.tscn" id="2_rfxm2"]
+
+[node name="WaterTestScene" type="Node2D"]
+
+[node name="WaterTile5" parent="." instance=ExtResource("2_rfxm2")]
+position = Vector2(255, 70)
+
+[node name="WaterTile4" parent="." instance=ExtResource("2_rfxm2")]
+position = Vector2(191, 69)
+
+[node name="Boat" parent="." node_paths=PackedStringArray("starting_tile", "end_tile") instance=ExtResource("1_dj4yt")]
+z_index = 1
+position = Vector2(64.0001, 68)
+scale = Vector2(0.2, 0.2)
+starting_tile = NodePath("../WaterTile")
+end_tile = NodePath("../WaterTile3")
+max_distance_to_next_cell = 70
+
+[node name="WaterTile" parent="." instance=ExtResource("2_rfxm2")]
+position = Vector2(62, 70)
+
+[node name="WaterTile2" parent="." instance=ExtResource("2_rfxm2")]
+position = Vector2(125, 70)
+
+[node name="WaterTile3" parent="." instance=ExtResource("2_rfxm2")]
+position = Vector2(254, 132)

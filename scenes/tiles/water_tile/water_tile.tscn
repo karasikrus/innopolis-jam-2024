@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt13cipvlc8nm"]
+
+[ext_resource type="Script" path="res://scenes/tiles/water_tile/water_tile.gd" id="1_pk07m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uk6v2"]
+
+[sub_resource type="Gradient" id="Gradient_2o1ne"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5r71c"]
+gradient = SubResource("Gradient_2o1ne")
+fill_from = Vector2(0.0988372, 0.930233)
+
+[node name="WaterTile" type="StaticBody2D" groups=["water_tiles"]]
+script = ExtResource("1_pk07m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uk6v2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_5r71c")
