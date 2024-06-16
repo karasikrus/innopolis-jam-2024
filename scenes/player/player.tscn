@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://coj0ji72ish6p"]
+[gd_scene load_steps=36 format=3 uid="uid://coj0ji72ish6p"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pjg7b"]
 [ext_resource type="AudioStream" uid="uid://c5ieme174lge2" path="res://sounds/Kick/Kick.wav" id="2_7ywyx"]
@@ -7,9 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://ddenwa1crthb6" path="res://sounds/Steps/Step_3_v2.wav" id="4_0hq4x"]
 [ext_resource type="Texture2D" uid="uid://b5nf1uujt2nsv" path="res://scenes/player/idle front.png" id="6_d8rh6"]
 [ext_resource type="Texture2D" uid="uid://p168khfvlnw7" path="res://scenes/player/kick right.png" id="7_hrpdd"]
-[ext_resource type="Texture2D" uid="uid://c75lnsy5v50mq" path="res://scenes/player/walk front.png" id="7_mxhmt"]
+[ext_resource type="Texture2D" uid="uid://dvqwu2ag2fe4j" path="res://scenes/player/kick down.png" id="8_mgx41"]
 [ext_resource type="Texture2D" uid="uid://dukg5b8clm88k" path="res://scenes/player/walk right.png" id="9_a1iyd"]
 [ext_resource type="Texture2D" uid="uid://uikgmtxurnfk" path="res://scenes/player/walk left.png" id="10_rrubb"]
+[ext_resource type="Texture2D" uid="uid://d3na6v3iwmx33" path="res://scenes/player/kick up.png" id="10_vubgu"]
+[ext_resource type="Texture2D" uid="uid://foccgpk535w3" path="res://scenes/player/walk front-sheet.png" id="11_6gq3e"]
 [ext_resource type="Texture2D" uid="uid://b4sxgrp3epb0t" path="res://scenes/player/walk up.png" id="11_jb2pr"]
 [ext_resource type="Texture2D" uid="uid://b7hbd6mgod4g2" path="res://scenes/player/kick left.png" id="12_hw75n"]
 
@@ -355,7 +357,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_hrpdd")]
+"values": [ExtResource("8_mgx41")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -379,7 +381,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1, 0]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_asfvx"]
@@ -517,7 +519,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_hrpdd")]
+"values": [ExtResource("10_vubgu")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -541,7 +543,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1, 0]
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_b06qs"]
@@ -624,7 +626,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_i7nor"]
 resource_name = "walk_down"
-length = 0.6
+length = 1.2
 loop_mode = 1
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -650,10 +652,10 @@ tracks/1/path = NodePath("Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.00754446),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_mxhmt")]
+"values": [ExtResource("11_6gq3e")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -665,7 +667,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [4]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -674,10 +676,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_d3l6c"]
@@ -735,7 +737,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_3d0ck"]
@@ -793,7 +795,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_wigg8"]
