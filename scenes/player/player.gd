@@ -95,7 +95,7 @@ func get_face_direction(dir : Vector2) -> Vector2:
 	
 
 func animate():
-	if is_kicking or is_falling or is_dead or is_respawning:
+	if is_kicking or is_falling or is_dead or is_respawning or is_talking:
 		return
 	if direction.length() > 0.001 and velocity.length() > 0.001:
 		animate_walk()
@@ -171,3 +171,15 @@ func _on_checkpoint_area_2d_area_entered(area):
 	var checkpoint = area as Checkpoint
 	if checkpoint:
 		respawn_point = (checkpoint.player_spawn as Node2D).global_position
+
+
+func get_new_block(index: int):
+	animation_player.play("new_block")
+	animation_player.animation_finished.connect(finish_getting_new_block.bind(index))
+	
+func finish_getting_new_block(anim_name: StringName, index : int):
+	if anim_name != "new_block":
+		return
+	animation_player.animation_finished.disconnect(finish_getting_new_block)
+	GlobalEvents.unlock_new_tile(index)
+	is_talking = false

@@ -339,6 +339,7 @@ rotation_smoothing_enabled = true
 [node name="Npc" parent="interactive_objects" instance=ExtResource("4_4vq7h")]
 position = Vector2(233, 84)
 dialog = ExtResource("5_ymo8q")
+unloked_block_index = 1
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
