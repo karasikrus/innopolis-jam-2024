@@ -9,6 +9,14 @@ class_name Frog
 @onready var ray_cast_2d = $RayCast2D
 @onready var sprite_2d = $Sprite2D
 
+@onready var fall_audio_stream_player_2d = $AudioStreamPlayers/FallAudioStreamPlayer2D
+@onready var kick_audio_stream_player_2d = $AudioStreamPlayers/KickAudioStreamPlayer2D
+@onready var hit_audio_stream_player_2d = $AudioStreamPlayers/HitAudioStreamPlayer2D
+@onready var quack_audio_stream_player_2d = $AudioStreamPlayers/QuackAudioStreamPlayer2D
+@onready var respawn_audio_stream_player_2d = $AudioStreamPlayers/RespawnAudioStreamPlayer2D
+
+@onready var frog_quack_timer = $FrogQuackTimer
+
 
 var ground_deceleration : float = 30
 var velocity_length : float = 0
@@ -38,6 +46,7 @@ func _physics_process(delta):
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		direction = velocity.normalized()
+		play_hit_sound()
 		
 
 
@@ -48,16 +57,20 @@ func kick(kick_direction):
 	velocity_length = kick_acceleration
 	animation_player.stop()
 	animation_player.play("kick")
+	kick_audio_stream_player_2d.play()
 	is_in_air = true
 	tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale", Vector2(1.5, 1.5), 0.2)
 	tween.tween_property(sprite_2d, "scale", Vector2(1, 1), 0.3)
 	tween.tween_callback(check_ground)
+	tween.tween_callback(play_hit_sound)
 	tween.tween_property(sprite_2d, "scale", Vector2(1.2, 1.2), 0.2)
 	tween.tween_property(sprite_2d, "scale", Vector2(1, 1), 0.2)
+	tween.tween_callback(play_hit_sound)
 	tween.tween_callback(land)
 	
-	
+func play_hit_sound():
+	hit_audio_stream_player_2d.play()
 
 func update_animation_speed():
 	if animation_player.current_animation != "kick":
@@ -94,6 +107,8 @@ func fall():
 	is_falling = true
 	if tween:
 		tween.kill()
+	
+	fall_audio_stream_player_2d.play()
 	tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale", Vector2(0.01, 0.01), 0.4)
 	tween.tween_property(sprite_2d, "scale", Vector2(0.01, 0.01), 0.4)
@@ -111,14 +126,32 @@ func respawn():
 		tween.kill()
 	tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale", Vector2(1, 1), 0.4)
+	tween.tween_callback(play_respawn_sound)
 	tween.tween_callback(finish_respawn)
+
+
+func play_respawn_sound():
+	respawn_audio_stream_player_2d.play()
+
 
 func finish_respawn():
 	is_respawning = false
 	
+
+func quack():
+	quack_audio_stream_player_2d.play()
+	frog_quack_timer.start()
 
 
 func _on_checkpoint_area_2d_area_entered(area):
 	var checkpoint = area as Checkpoint
 	if checkpoint:
 		respawn_point = (checkpoint.frog_spawn as Node2D).global_position
+
+
+func _on_quack_area_2d_body_entered(body):
+	frog_quack_timer.stop()
+
+
+func _on_quack_area_2d_body_exited(body):
+	frog_quack_timer.start()

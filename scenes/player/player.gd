@@ -80,7 +80,7 @@ func get_face_direction(dir : Vector2) -> Vector2:
 		# no input: same face direction
 		return face_direction
 		
-	if abs(dir.x) > abs(dir.y):
+	if abs(dir.x) >= abs(dir.y):
 		# horizontal
 		if dir.x >= 0:
 			return Vector2.RIGHT

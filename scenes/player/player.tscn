@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://coj0ji72ish6p"]
+[gd_scene load_steps=38 format=3 uid="uid://coj0ji72ish6p"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pjg7b"]
 [ext_resource type="AudioStream" uid="uid://c5ieme174lge2" path="res://sounds/Kick/Kick.wav" id="2_7ywyx"]
 [ext_resource type="AudioStream" uid="uid://c2a5pqflwat8j" path="res://sounds/Steps/Step_1_v2.wav" id="2_fq310"]
 [ext_resource type="AudioStream" uid="uid://jvtauuhkjj3a" path="res://sounds/Steps/Step_2_v2.wav" id="3_6hq28"]
 [ext_resource type="AudioStream" uid="uid://ddenwa1crthb6" path="res://sounds/Steps/Step_3_v2.wav" id="4_0hq4x"]
+[ext_resource type="AudioStream" uid="uid://dekhmq2erncue" path="res://sounds/NPC/Fanfars_16bit.wav" id="6_2pg5h"]
 [ext_resource type="Texture2D" uid="uid://b5nf1uujt2nsv" path="res://scenes/player/idle front.png" id="6_d8rh6"]
 [ext_resource type="Texture2D" uid="uid://p168khfvlnw7" path="res://scenes/player/kick right.png" id="7_hrpdd"]
 [ext_resource type="Texture2D" uid="uid://dvqwu2ag2fe4j" path="res://scenes/player/kick down.png" id="8_mgx41"]
@@ -609,6 +610,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioPlayers/NewBlockAudioPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_b06qs"]
 resource_name = "respawn"
@@ -976,6 +991,11 @@ bus = &"sfx"
 
 [node name="KickAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = SubResource("AudioStreamRandomizer_1pote")
+volume_db = -15.0
+bus = &"sfx"
+
+[node name="NewBlockAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("6_2pg5h")
 volume_db = -15.0
 bus = &"sfx"
 

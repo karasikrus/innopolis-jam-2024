@@ -1,7 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://tl8cl031ngk2"]
+[gd_scene load_steps=29 format=3 uid="uid://tl8cl031ngk2"]
 
 [ext_resource type="Script" path="res://scenes/frog/frog.gd" id="1_75i1k"]
 [ext_resource type="Texture2D" uid="uid://hh6oo80bivgc" path="res://scenes/frog/legushak-Sheet.png" id="2_72eak"]
+[ext_resource type="AudioStream" uid="uid://c5yjap548qarb" path="res://sounds/Frog/FallingQuak_16bit.wav" id="3_53q0j"]
+[ext_resource type="AudioStream" uid="uid://bjcryd0ly6j8q" path="res://sounds/Frog/HitReaction_1.wav" id="4_70mbb"]
+[ext_resource type="AudioStream" uid="uid://cc1sxrmyvs605" path="res://sounds/Frog/HitReaction_2.wav" id="5_dfymi"]
+[ext_resource type="AudioStream" uid="uid://bhw0we4ynqbjp" path="res://sounds/Frog/HitReaction_3.wav" id="6_5rky7"]
+[ext_resource type="AudioStream" uid="uid://dy18sep0h0bv6" path="res://sounds/Frog/Hit_1.wav" id="7_ccy2i"]
+[ext_resource type="AudioStream" uid="uid://ctsoa8788kbmo" path="res://sounds/Frog/Hit_2.wav" id="8_fknhr"]
+[ext_resource type="AudioStream" uid="uid://dojsgi47f4oqg" path="res://sounds/Frog/Hit_3.wav" id="9_eqfii"]
+[ext_resource type="AudioStream" uid="uid://d14ehur4ip4jn" path="res://sounds/Frog/Hit_4.wav" id="10_w1aeh"]
+[ext_resource type="AudioStream" uid="uid://clyouaf84q63" path="res://sounds/Frog/Hit_5.wav" id="11_nq4b0"]
+[ext_resource type="AudioStream" uid="uid://bb3he7o7pcmtb" path="res://sounds/Frog/Hit_6.wav" id="12_ig1kg"]
+[ext_resource type="AudioStream" uid="uid://dc767qcveq883" path="res://sounds/Frog/Quak_1_16bit.wav" id="13_ffbbr"]
+[ext_resource type="AudioStream" uid="uid://brsbufuw3jodn" path="res://sounds/Frog/Quak_2_16bit.wav" id="14_cqxwb"]
+[ext_resource type="AudioStream" uid="uid://crvshxb0qxxty" path="res://sounds/Frog/Quak_3_16bit.wav" id="15_w4wpx"]
+[ext_resource type="AudioStream" uid="uid://b3yk1gu2yjyw5" path="res://sounds/Frog/RespawnQuak_16bit.wav" id="16_cjeth"]
 
 [sub_resource type="Animation" id="Animation_aa77p"]
 length = 0.001
@@ -82,6 +96,42 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmj4d"]
 radius = 6.08276
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m0u26"]
+streams_count = 3
+stream_0/stream = ExtResource("4_70mbb")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_dfymi")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_5rky7")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_atss2"]
+streams_count = 6
+stream_0/stream = ExtResource("7_ccy2i")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_fknhr")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("9_eqfii")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("10_w1aeh")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("11_nq4b0")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("12_ig1kg")
+stream_5/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2w5ky"]
+streams_count = 3
+stream_0/stream = ExtResource("13_ffbbr")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("14_cqxwb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("15_w4wpx")
+stream_2/weight = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ferv0"]
+radius = 64.0078
+
 [node name="Frog" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 4
@@ -100,7 +150,6 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0.0390625, 1)
 texture_filter = 1
 texture = ExtResource("2_72eak")
 offset = Vector2(0, -8)
@@ -125,4 +174,40 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_bmj4d")
 debug_color = Color(0.517206, 0.54182, 0.539879, 0.42)
 
+[node name="AudioStreamPlayers" type="Node2D" parent="."]
+
+[node name="FallAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
+stream = ExtResource("3_53q0j")
+bus = &"sfx"
+
+[node name="KickAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
+stream = SubResource("AudioStreamRandomizer_m0u26")
+bus = &"sfx"
+
+[node name="HitAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
+stream = SubResource("AudioStreamRandomizer_atss2")
+bus = &"sfx"
+
+[node name="QuackAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
+stream = SubResource("AudioStreamRandomizer_2w5ky")
+bus = &"sfx"
+
+[node name="RespawnAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
+stream = ExtResource("16_cjeth")
+bus = &"sfx"
+
+[node name="FrogQuackTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="QuackArea2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuackArea2D"]
+shape = SubResource("CircleShape2D_ferv0")
+
 [connection signal="area_entered" from="CheckpointArea2D" to="." method="_on_checkpoint_area_2d_area_entered"]
+[connection signal="timeout" from="FrogQuackTimer" to="." method="quack"]
+[connection signal="body_entered" from="QuackArea2D" to="." method="_on_quack_area_2d_body_entered"]
+[connection signal="body_exited" from="QuackArea2D" to="." method="_on_quack_area_2d_body_exited"]
