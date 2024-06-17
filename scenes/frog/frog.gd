@@ -57,6 +57,7 @@ func kick(kick_direction):
 	velocity_length = kick_acceleration
 	animation_player.stop()
 	animation_player.play("kick")
+	animation_player.seek(0.6, true)
 	kick_audio_stream_player_2d.play()
 	is_in_air = true
 	tween = get_tree().create_tween()
@@ -76,6 +77,8 @@ func update_animation_speed():
 	if animation_player.current_animation != "kick":
 		animation_player.speed_scale = 1
 		return
+	if velocity_length < 1:
+		animation_player.play("idle")
 	
 	var animation_speed = lerpf(0, 2, velocity_length/ kick_acceleration)
 	animation_player.speed_scale = animation_speed

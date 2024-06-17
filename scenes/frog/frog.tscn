@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://tl8cl031ngk2"]
+[gd_scene load_steps=31 format=3 uid="uid://tl8cl031ngk2"]
 
 [ext_resource type="Script" path="res://scenes/frog/frog.gd" id="1_75i1k"]
 [ext_resource type="Texture2D" uid="uid://hh6oo80bivgc" path="res://scenes/frog/legushak-Sheet.png" id="2_72eak"]
 [ext_resource type="AudioStream" uid="uid://c5yjap548qarb" path="res://sounds/Frog/FallingQuak_16bit.wav" id="3_53q0j"]
+[ext_resource type="Texture2D" uid="uid://bww0723nh0pef" path="res://scenes/frog/legushak-idle.png" id="3_w2r5e"]
 [ext_resource type="AudioStream" uid="uid://qpsjnj8wo4rj" path="res://sounds/Frog/Hit_Reaction_1_16bit.wav" id="4_2gbs0"]
 [ext_resource type="AudioStream" uid="uid://d3w5k2rngdce7" path="res://sounds/Frog/Hit_Reaction_2_16bit.wav" id="5_gcufb"]
 [ext_resource type="AudioStream" uid="uid://dtf4oh4104lb6" path="res://sounds/Frog/Hit_Reaction_3_16bit.wav" id="6_g6npn"]
@@ -31,6 +32,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_72eak")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
 
 [sub_resource type="Animation" id="Animation_4j4ah"]
 resource_name = "kick"
@@ -48,10 +73,76 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_72eak")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_iyats"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_w2r5e")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_817lk"]
 _data = {
 "RESET": SubResource("Animation_aa77p"),
+"idle": SubResource("Animation_iyats"),
 "kick": SubResource("Animation_4j4ah")
 }
 
@@ -143,6 +234,7 @@ script = ExtResource("1_75i1k")
 libraries = {
 "": SubResource("AnimationLibrary_817lk")
 }
+autoplay = "idle"
 
 [node name="JumpAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
