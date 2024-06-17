@@ -26,7 +26,9 @@ script = ExtResource("2_silwi")
 scene = ExtResource("4_mesjd")
 overrides = {
 "box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(200, 80)"
+"box_size": "Vector2(200, 80)",
+"typing_sounds_pitch_variance": "0.1",
+"typing_sounds_sounds_folder": "\"res://sounds/Voice\""
 }
 
 [sub_resource type="Resource" id="Resource_ngq2n"]
