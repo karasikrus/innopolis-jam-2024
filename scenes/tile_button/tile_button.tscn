@@ -52,6 +52,6 @@ final_tile_to_spawn = ExtResource("3_iueog")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7o2ia")
-volume_db = -15.0
+volume_db = -5.0
 
 [connection signal="button_down" from="." to="." method="spawn_draggable_tile"]

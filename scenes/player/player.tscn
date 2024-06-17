@@ -1000,7 +1000,7 @@ script = ExtResource("1_pjg7b")
 
 [node name="StepsAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = SubResource("AudioStreamRandomizer_883du")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"sfx"
 
 [node name="KickAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
@@ -1015,7 +1015,7 @@ bus = &"sfx"
 
 [node name="VoidFallingAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = SubResource("AudioStreamRandomizer_2m072")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
