@@ -996,6 +996,10 @@ collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_pjg7b")
 
+[node name="StopTalkingTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [node name="AudioPlayers" type="Node2D" parent="."]
 
 [node name="StepsAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]

@@ -9,6 +9,7 @@ class_name Player
 @onready var ray_cast_2d_4 = $fall_checks/RayCast2D4
 
 @onready var sprite_2d = $Sprite2D
+@onready var stop_talking_timer = $StopTalkingTimer
 
 
 var speed = 100  # speed in pixels/sec
@@ -187,4 +188,9 @@ func finish_getting_new_block(anim_name: StringName, index : int):
 		return
 	animation_player.animation_finished.disconnect(finish_getting_new_block)
 	GlobalEvents.unlock_new_tile(index)
+	is_talking = false
+
+func stop_talking():
+	stop_talking_timer.start()
+	await stop_talking_timer.timeout
 	is_talking = false

@@ -1,29 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://gellyt8g0j1f"]
+[gd_scene load_steps=7 format=3 uid="uid://gellyt8g0j1f"]
 
+[ext_resource type="Texture2D" uid="uid://dff8dar1h4uxt" path="res://scenes/remove_button/return.png" id="1_q450k"]
 [ext_resource type="Script" path="res://scenes/remove_button/remove_button.gd" id="1_qodg5"]
 [ext_resource type="AudioStream" uid="uid://bbmpl0yd0tclj" path="res://sounds/Placing/Displacement.wav" id="2_u8nse"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnmfu"]
-bg_color = Color(1, 0.342467, 0.283971, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pjjh"]
+texture = ExtResource("1_q450k")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usp5n"]
-bg_color = Color(0.999999, 0.25895, 0.210417, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hm527"]
+texture = ExtResource("1_q450k")
+modulate_color = Color(0.629675, 0.629675, 0.629675, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d33yp"]
-bg_color = Color(0.585681, 0, 0.0112599, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mla2j"]
+texture = ExtResource("1_q450k")
+modulate_color = Color(0.259294, 0.259294, 0.259294, 1)
 
 [node name="RemoveButton" type="Button"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -304.0
-offset_bottom = -164.0
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_lnmfu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_usp5n")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_d33yp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pjjh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hm527")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mla2j")
 script = ExtResource("1_qodg5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

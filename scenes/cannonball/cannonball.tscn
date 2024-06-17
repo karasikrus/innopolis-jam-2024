@@ -1,7 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://fcg55qg2my05"]
+[gd_scene load_steps=7 format=3 uid="uid://fcg55qg2my05"]
 
 [ext_resource type="Script" path="res://scenes/cannonball/cannonball.gd" id="1_xv76k"]
-[ext_resource type="Texture2D" uid="uid://bgu4lnsafosmc" path="res://icon.svg" id="2_0x76q"]
+[ext_resource type="Texture2D" uid="uid://djifu76p6tlsv" path="res://scenes/cannonball/bullet.png" id="2_eqd5v"]
+
+[sub_resource type="Animation" id="Animation_8w2rj"]
+resource_name = "default"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_greuo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plr12"]
+_data = {
+"RESET": SubResource("Animation_greuo"),
+"default": SubResource("Animation_8w2rj")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tbxhh"]
 radius = 16.4
@@ -10,9 +48,16 @@ radius = 16.4
 collision_mask = 9
 script = ExtResource("1_xv76k")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_plr12")
+}
+autoplay = "default"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_0x76q")
+texture_filter = 1
+texture = ExtResource("2_eqd5v")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tbxhh")

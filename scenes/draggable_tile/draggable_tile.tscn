@@ -1,19 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dksj3xiqrptce"]
+[gd_scene load_steps=5 format=3 uid="uid://dksj3xiqrptce"]
 
 [ext_resource type="Script" path="res://scenes/draggable_tile/draggable_tile.gd" id="1_v2mci"]
 [ext_resource type="PackedScene" uid="uid://dxmtlrotthtmw" path="res://scenes/tiles/grass_tile/grass_tile.tscn" id="2_xy52p"]
-
-[sub_resource type="Gradient" id="Gradient_xlbaj"]
-offsets = PackedFloat32Array(0, 0.285714, 0.564935, 1)
-colors = PackedColorArray(0, 0.733333, 0, 1, 0.239303, 0.567177, 0.160167, 1, 0.0679503, 0.686153, 0.0454796, 1, 0.357793, 0.484906, 0.239474, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b5jco"]
-gradient = SubResource("Gradient_xlbaj")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
+[ext_resource type="Texture2D" uid="uid://cea3qsh1t04cn" path="res://scenes/draggable_tile/grass 3x3.png" id="3_256ef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0hf2"]
-radius = 26.0192
+radius = 37.53
 
 [node name="DraggableTile" type="Area2D"]
 collision_layer = 0
@@ -22,7 +14,7 @@ script = ExtResource("1_v2mci")
 tile_to_spawn = ExtResource("2_xy52p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_b5jco")
+texture = ExtResource("3_256ef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k0hf2")

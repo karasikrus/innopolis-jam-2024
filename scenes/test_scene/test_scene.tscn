@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4ru6vnvln4o6"]
+[gd_scene load_steps=19 format=3 uid="uid://4ru6vnvln4o6"]
 
 [ext_resource type="PackedScene" uid="uid://6h2n1dbkcqkv" path="res://scenes/wooden_box/wooden_box.tscn" id="1_6ia46"]
 [ext_resource type="PackedScene" uid="uid://dse8sjhghmxif" path="res://scenes/cannon/cannon.tscn" id="1_tccjd"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://gellyt8g0j1f" path="res://scenes/remove_button/remove_button.tscn" id="4_423jr"]
 [ext_resource type="PackedScene" uid="uid://tl8cl031ngk2" path="res://scenes/frog/frog.tscn" id="5_e0w7l"]
 [ext_resource type="Resource" path="res://dialogs/timelines/timeline_test.dtl" id="5_ymo8q"]
+[ext_resource type="Resource" path="res://dialogs/timelines/timeline2.dtl" id="7_ni0su"]
+[ext_resource type="Texture2D" uid="uid://dfuhkn2a7v438" path="res://scenes/remove_button/inventory.png" id="8_eud5g"]
 [ext_resource type="PackedScene" uid="uid://jrbb5vbnueub" path="res://scenes/tiles/mirroring_tile/mirroring_stone.tscn" id="9_p8tmq"]
-[ext_resource type="PackedScene" uid="uid://dksj3xiqrptce" path="res://scenes/draggable_tile/draggable_tile.tscn" id="9_s2sxx"]
-[ext_resource type="PackedScene" uid="uid://bt13cipvlc8nm" path="res://scenes/tiles/water_tile/water_tile.tscn" id="11_cbeu1"]
 [ext_resource type="PackedScene" uid="uid://bt03oxao3n0ny" path="res://scenes/checkpoint/checkpoint.tscn" id="11_m3c2r"]
+[ext_resource type="AudioStream" uid="uid://bo7p8bxa0mu0f" path="res://sounds/music/111.mp3" id="13_jtlvo"]
 
 [sub_resource type="Gradient" id="Gradient_aykyt"]
 offsets = PackedFloat32Array(0.0970874, 0.514563, 1)
@@ -20,6 +21,9 @@ colors = PackedColorArray(0.00471394, 0.338081, 0.00432628, 1, 0, 0.467402, 0.00
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yn1nj"]
 gradient = SubResource("Gradient_aykyt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xebyk"]
+texture = ExtResource("8_eud5g")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hdid"]
 size = Vector2(96.375, 189.813)
@@ -260,6 +264,7 @@ rotation_smoothing_enabled = true
 [node name="Npc" parent="interactive_objects" instance=ExtResource("4_4vq7h")]
 position = Vector2(233, 84)
 dialog = ExtResource("5_ymo8q")
+dialog_2 = ExtResource("7_ni0su")
 unloked_block_index = 1
 
 [node name="Cannon" parent="interactive_objects" instance=ExtResource("1_tccjd")]
@@ -275,69 +280,76 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="Hud/Control"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 52.0
+offset_top = 200.0
+offset_right = 180.0
+offset_bottom = 232.0
+scale = Vector2(3.16, 2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xebyk")
+
 [node name="TileButton" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = 108.0
-offset_right = -205.0
-offset_bottom = 116.0
+offset_left = -167.0
+offset_top = 66.0
+offset_right = -103.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1)
 block_index = 1
 
 [node name="TileButton2" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = 107.0
-offset_right = -182.0
-offset_bottom = 115.0
+offset_left = -117.0
+offset_top = 67.0
+offset_right = -53.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1)
 unlocked = true
 block_index = 2
 
 [node name="TileButton3" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -171.0
-offset_top = 108.0
-offset_right = -163.0
-offset_bottom = 116.0
-tile_to_spawn = ExtResource("9_s2sxx")
+offset_left = -67.0
+offset_top = 67.0
+offset_right = -3.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1)
+unlocked = true
 block_index = 3
 final_tile_to_spawn = ExtResource("9_p8tmq")
 
-[node name="TileButton4" parent="Hud/Control" instance=ExtResource("3_ds1ks")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = 108.0
-offset_right = -143.0
-offset_bottom = 116.0
-unlocked = true
-block_index = 1
-final_tile_to_spawn = ExtResource("11_cbeu1")
-
 [node name="RemoveButton" parent="Hud/Control" instance=ExtResource("4_423jr")]
 layout_mode = 1
-offset_left = 380.0
-offset_top = 238.0
-offset_right = -84.0
-offset_bottom = -16.0
+offset_left = 110.0
+offset_top = 67.0
+offset_right = 174.0
+offset_bottom = 131.0
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -358,6 +370,12 @@ shape = SubResource("RectangleShape2D_5hdid")
 
 [node name="PlayerSpawn" parent="Checkpoints/Checkpoint2" index="1"]
 position = Vector2(575, 128)
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jtlvo")
+volume_db = -25.0
+autoplay = true
+bus = &"music"
 
 [editable path="Checkpoints/Checkpoint"]
 [editable path="Checkpoints/Checkpoint2"]

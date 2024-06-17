@@ -29,6 +29,7 @@ directories/dch_directory={
 "test_character": "res://dialogs/characters/test_character.dch"
 }
 directories/dtl_directory={
+"timeline2": "res://dialogs/timelines/timeline2.dtl",
 "timeline_test": "res://scenes/dialogues/timelines/timeline_test.dtl",
 "timelines/timeline_test": "res://dialogs/timelines/timeline_test.dtl"
 }

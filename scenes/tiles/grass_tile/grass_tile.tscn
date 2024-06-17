@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxmtlrotthtmw"]
 
 [ext_resource type="Script" path="res://scenes/tiles/grass_tile/grass_tile.gd" id="1_ctxwv"]
-[ext_resource type="Texture2D" uid="uid://5rbcack6tdnj" path="res://scenes/tiles/grass_tile/grass 3x3 + down.png" id="2_bwoug"]
 [ext_resource type="AudioStream" uid="uid://h2vnk4x6k21u" path="res://sounds/Placing/Placement.wav" id="2_ec2dt"]
+[ext_resource type="Texture2D" uid="uid://cea3qsh1t04cn" path="res://scenes/draggable_tile/grass 3x3.png" id="2_josbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md4on"]
-size = Vector2(64, 64)
+size = Vector2(96, 96)
 
 [node name="GrassTile" type="StaticBody2D"]
 collision_layer = 0
@@ -13,9 +13,7 @@ collision_mask = 0
 script = ExtResource("1_ctxwv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
-scale = Vector2(0.67, 0.67)
-texture = ExtResource("2_bwoug")
+texture = ExtResource("2_josbq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_md4on")

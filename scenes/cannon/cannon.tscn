@@ -1,11 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dse8sjhghmxif"]
+[gd_scene load_steps=5 format=3 uid="uid://dse8sjhghmxif"]
 
 [ext_resource type="Script" path="res://scenes/cannon/cannon.gd" id="1_k6s83"]
-
-[sub_resource type="Gradient" id="Gradient_uu24w"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4au8f"]
-gradient = SubResource("Gradient_uu24w")
+[ext_resource type="Texture2D" uid="uid://c40wdyc67lu08" path="res://scenes/cannon/gun.png" id="2_rfvt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h70pl"]
 size = Vector2(64, 64)
@@ -15,9 +11,13 @@ radius = 8.06226
 
 [node name="Cannon" type="Area2D"]
 script = ExtResource("1_k6s83")
+cannon_rotation = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_4au8f")
+texture_filter = 1
+rotation = -1.5708
+texture = ExtResource("2_rfvt3")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
