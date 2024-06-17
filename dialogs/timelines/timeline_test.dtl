@@ -1,3 +1,9 @@
-Привет!
-Держи блок!
-удачи!
+join test_character 1
+test_character: [mood=default]Ай! 
+test_character: [mood=default]Ты чего пинаешься?
+test_character: [mood=default]Нормально поздороваться не можешь?
+test_character: [mood=default]...
+test_character: [mood=default]Ты немой, что ли?
+test_character: [mood=default]Да, похоже, дело в бюджетных ограничениях.
+test_character: [mood=default]Ладно, побегай по нашему супер открытому миру.
+test_character: [mood=default]Если что-то не получится, возвращайся ко мне.

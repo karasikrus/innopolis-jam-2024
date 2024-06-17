@@ -25,6 +25,7 @@ overrides = {}
 script = ExtResource("2_silwi")
 scene = ExtResource("4_mesjd")
 overrides = {
+"box_panel": "\"vn_textbox_default_panel.tres\"",
 "box_size": "Vector2(200, 80)"
 }
 
