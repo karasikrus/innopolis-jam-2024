@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/frog/frog.gd" id="1_75i1k"]
 [ext_resource type="Texture2D" uid="uid://hh6oo80bivgc" path="res://scenes/frog/legushak-Sheet.png" id="2_72eak"]
 [ext_resource type="AudioStream" uid="uid://c5yjap548qarb" path="res://sounds/Frog/FallingQuak_16bit.wav" id="3_53q0j"]
-[ext_resource type="AudioStream" uid="uid://bjcryd0ly6j8q" path="res://sounds/Frog/HitReaction_1.wav" id="4_70mbb"]
-[ext_resource type="AudioStream" uid="uid://cc1sxrmyvs605" path="res://sounds/Frog/HitReaction_2.wav" id="5_dfymi"]
-[ext_resource type="AudioStream" uid="uid://bhw0we4ynqbjp" path="res://sounds/Frog/HitReaction_3.wav" id="6_5rky7"]
+[ext_resource type="AudioStream" uid="uid://qpsjnj8wo4rj" path="res://sounds/Frog/Hit_Reaction_1_16bit.wav" id="4_2gbs0"]
+[ext_resource type="AudioStream" uid="uid://d3w5k2rngdce7" path="res://sounds/Frog/Hit_Reaction_2_16bit.wav" id="5_gcufb"]
+[ext_resource type="AudioStream" uid="uid://dtf4oh4104lb6" path="res://sounds/Frog/Hit_Reaction_3_16bit.wav" id="6_g6npn"]
 [ext_resource type="AudioStream" uid="uid://dy18sep0h0bv6" path="res://sounds/Frog/Hit_1.wav" id="7_ccy2i"]
 [ext_resource type="AudioStream" uid="uid://ctsoa8788kbmo" path="res://sounds/Frog/Hit_2.wav" id="8_fknhr"]
 [ext_resource type="AudioStream" uid="uid://dojsgi47f4oqg" path="res://sounds/Frog/Hit_3.wav" id="9_eqfii"]
@@ -98,11 +98,11 @@ radius = 6.08276
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m0u26"]
 streams_count = 3
-stream_0/stream = ExtResource("4_70mbb")
+stream_0/stream = ExtResource("4_2gbs0")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("5_dfymi")
+stream_1/stream = ExtResource("5_gcufb")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("6_5rky7")
+stream_2/stream = ExtResource("6_g6npn")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_atss2"]
@@ -178,22 +178,27 @@ debug_color = Color(0.517206, 0.54182, 0.539879, 0.42)
 
 [node name="FallAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
 stream = ExtResource("3_53q0j")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="KickAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
 stream = SubResource("AudioStreamRandomizer_m0u26")
+volume_db = -10.0
 bus = &"sfx"
 
 [node name="HitAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
 stream = SubResource("AudioStreamRandomizer_atss2")
+volume_db = 5.0
 bus = &"sfx"
 
 [node name="QuackAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
 stream = SubResource("AudioStreamRandomizer_2w5ky")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="RespawnAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayers"]
 stream = ExtResource("16_cjeth")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="FrogQuackTimer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://coj0ji72ish6p"]
+[gd_scene load_steps=44 format=3 uid="uid://coj0ji72ish6p"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pjg7b"]
 [ext_resource type="AudioStream" uid="uid://c5ieme174lge2" path="res://sounds/Kick/Kick.wav" id="2_7ywyx"]
@@ -7,13 +7,18 @@
 [ext_resource type="AudioStream" uid="uid://ddenwa1crthb6" path="res://sounds/Steps/Step_3_v2.wav" id="4_0hq4x"]
 [ext_resource type="AudioStream" uid="uid://dekhmq2erncue" path="res://sounds/NPC/Fanfars_16bit.wav" id="6_2pg5h"]
 [ext_resource type="Texture2D" uid="uid://b5nf1uujt2nsv" path="res://scenes/player/idle front.png" id="6_d8rh6"]
+[ext_resource type="AudioStream" uid="uid://b3pbc6ebssxua" path="res://sounds/Player/Falling_1_16bit.wav" id="7_8yb42"]
 [ext_resource type="Texture2D" uid="uid://p168khfvlnw7" path="res://scenes/player/kick right.png" id="7_hrpdd"]
+[ext_resource type="AudioStream" uid="uid://bmdur5ekn8irn" path="res://sounds/Player/Falling_2_16bit.wav" id="8_i2627"]
 [ext_resource type="Texture2D" uid="uid://dvqwu2ag2fe4j" path="res://scenes/player/kick down.png" id="8_mgx41"]
 [ext_resource type="Texture2D" uid="uid://dukg5b8clm88k" path="res://scenes/player/walk right.png" id="9_a1iyd"]
+[ext_resource type="AudioStream" uid="uid://bi2nxbb6lg01i" path="res://sounds/Player/Falling_3_16bit.wav" id="9_m0lms"]
 [ext_resource type="Texture2D" uid="uid://uikgmtxurnfk" path="res://scenes/player/walk left.png" id="10_rrubb"]
+[ext_resource type="AudioStream" uid="uid://ct1a4a7ss6gm1" path="res://sounds/Player/Falling_4_16bit.wav" id="10_unljg"]
 [ext_resource type="Texture2D" uid="uid://d3na6v3iwmx33" path="res://scenes/player/kick up.png" id="10_vubgu"]
 [ext_resource type="Texture2D" uid="uid://foccgpk535w3" path="res://scenes/player/walk front-sheet.png" id="11_6gq3e"]
 [ext_resource type="Texture2D" uid="uid://b4sxgrp3epb0t" path="res://scenes/player/walk up.png" id="11_jb2pr"]
+[ext_resource type="AudioStream" uid="uid://di7j5aqtrrw2t" path="res://sounds/Player/Falling_5_16bit.wav" id="11_l6mhy"]
 [ext_resource type="Texture2D" uid="uid://b7hbd6mgod4g2" path="res://scenes/player/kick left.png" id="12_hw75n"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_883du"]
@@ -29,6 +34,19 @@ stream_2/weight = 1.0
 streams_count = 1
 stream_0/stream = ExtResource("2_7ywyx")
 stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2m072"]
+streams_count = 5
+stream_0/stream = ExtResource("7_8yb42")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_i2627")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("9_m0lms")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("10_unljg")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("11_l6mhy")
+stream_4/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_0ogp3"]
 length = 0.001
@@ -168,6 +186,20 @@ tracks/5/keys = {
 "values": [{
 "args": [],
 "method": &"respawn"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioPlayers/VoidFallingAudioPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
 }]
 }
 
@@ -714,15 +746,9 @@ tracks/0/path = NodePath("AudioPlayers/StepsAudioPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [0.0],
-"method": &"play"
-}, {
-"args": [0.0],
-"method": &"play"
-}, {
 "args": [0.0],
 "method": &"play"
 }, {
@@ -778,12 +804,9 @@ tracks/0/path = NodePath("AudioPlayers/StepsAudioPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [0.0],
-"method": &"play"
-}, {
 "args": [0.0],
 "method": &"play"
 }]
@@ -836,12 +859,9 @@ tracks/0/path = NodePath("AudioPlayers/StepsAudioPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [0.0],
-"method": &"play"
-}, {
 "args": [0.0],
 "method": &"play"
 }]
@@ -894,15 +914,9 @@ tracks/0/path = NodePath("AudioPlayers/StepsAudioPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [0.0],
-"method": &"play"
-}, {
-"args": [0.0],
-"method": &"play"
-}, {
 "args": [0.0],
 "method": &"play"
 }, {
@@ -986,17 +1000,22 @@ script = ExtResource("1_pjg7b")
 
 [node name="StepsAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = SubResource("AudioStreamRandomizer_883du")
-volume_db = -15.0
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="KickAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = SubResource("AudioStreamRandomizer_1pote")
-volume_db = -15.0
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="NewBlockAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = ExtResource("6_2pg5h")
-volume_db = -15.0
+volume_db = -5.0
+bus = &"sfx"
+
+[node name="VoidFallingAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = SubResource("AudioStreamRandomizer_2m072")
+volume_db = -5.0
 bus = &"sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1004,6 +1023,7 @@ libraries = {
 "": SubResource("AnimationLibrary_bg1q8")
 }
 autoplay = "idle_down"
+speed_scale = 1.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
